@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: asteurer/resume_api_database
+    restart: always
+    container_name: db
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # - ./db/init/:/docker-entrypoint-initdb.d/:ro
+    environment:
+      POSTGRES_DB: ${DATABASE_HOST}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - 5433:5432
+    build:
+      context: ./
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  app:
+    ports:
+      - "5000:5000"
+    build:
+      context: ./app
+    image: asteurer/resume_api_app
+    restart: always
+    container_name: app
+    environment:
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_NAME: db
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD} 
+      VALID_TOKEN: ${VALID_TOKEN}
+    depends_on:
+      - db
+
+volumes:
+  pgdata:

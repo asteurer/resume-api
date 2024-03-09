@@ -1,0 +1,108 @@
+{
+    "contact": {
+        "first_name": "Andrew"
+        , "last_name": "Steurer"
+        , "location": "Logan, UT"
+        , "github_link": "https://github.com/asteurer"
+        , "linkedin_link": "https://linkedin.com/in/andrewsteurer"
+        , "professional_summary": "Computer Science undergraduate student passionate about automating manual tasks with substantial hands-on experience in Amazon Web Services. A self-motivated learner who can apply previous experience and novel, creative solutions to solve problems."
+    }
+    , "education": [
+        {
+            "institution": "Western Governors University"
+            , "degree": "Bachelor of Science, Computer Science"
+            , "duration": "Aug 2022 - Mar 2024"
+            , "gpa": "3.46/4.00"
+        }
+    ]
+    , "work_experience": [
+        {
+            "employer": "Conservice"
+            , "title": "Data and Reporting Analyst"
+            , "location": "Logan, UT"
+            , "duration": "Jul 2023 - Present"
+            , "description": [
+                "Collaborated with Conservice’s executive team to better-understand the business through quantitative and qualitative analysis."
+                , "Programmed dozens of Python applications to help perform larger data analyses."
+                , "Enhanced the productivity of 5 different teams by creating and maintaining ad hoc automated workaround solutions."
+                , "Technologies: Python, Amazon Web Services, JavaScript, Google Apps Script"
+            ]
+        }
+        , {
+            "employer": "Conservice"
+            , "title": "Vendor Management Assistant Team Lead"
+            , "location": "Logan, UT"
+            , "duration": "Jan 2022 - Jul 2023"
+            , "description": [
+                "Designed and built automation solutions for manual processes across 8 different teams, saving over 100 hours of work a week and reducing manual errors by more than 60%."
+                , "Trained offshore managers how to integrate automated solutions into their workflow. The team showed an 84.34% efficiency increase post-training."
+                , "Technologies: JavaScript, Google Apps Script"
+            ]
+        }
+    ]
+    , "skills": {
+        "technologies": "Amazon Web Services S3, Amazon Web Services Lambda, Amazon Web Services SNS, Amazon Web Services IAM, PostgreSQL, Docker, Terraform"
+        , "languages": "Python, Bash"
+    }
+
+    , "projects": [
+        {
+            "name": "AWS Textract Pipeline"
+            , "code_repository": "https://github.com/asteurer/aws-textract-pipeline"
+            , "description": [
+                "Architected and built a serverless pipeline to and from Amazon Web Services Textract which has scraped text from more than 10,000 multi-page PDF images."
+                , "Technologies: Python, Amazon Web Services Lambda, Amazon Web Services S3, Amazon Web Services SNS, Amazon Web Services IAM, Terraform"
+            ]
+        }
+        , {
+            "name": "Package Delivery Algorithm"
+            , "code_repository": "https://github.com/asteurer/package-delivery-algorithm"
+            , "description": [
+                "Designed a nearest-neighbor algorithm with a custom hash table that delivers packages to various addresses before a deadline, within delivery truck mileage constraints, and individual package requirements. "
+                , "Technologies: Python"
+            ]
+        }
+        , {
+            "name": "Resume API"
+            , "code_repository": "https://github.com/asteurer/resume-api"
+            , "description": [
+                "Designed and built a containerized REST API that retrieves resume data from a database and distributes it using JSON."
+                , "Technologies: Python, Docker, PostgreSQL"
+            ]
+        }
+    ]
+
+    , "certifications": [
+        {
+            "issuer": "Amazon Web Services"
+            , "certifications": [
+                {
+                    "name": "AWS Certified Developer Associate"
+                    , "expiration_date": "Nov 2026"
+                }
+                , {
+                    "name": "AWS Certified Cloud Practitioner"
+                    , "expiration_date":"Nov 2026"
+                }
+            ]
+        }
+        , {
+            "issuer": "CompTIA"
+            , "certifications": [
+                {
+                    "name": "CompTIA Project+"
+                    , "expiration_date": "Jul 2026"
+                }
+            ]
+        }
+        , {
+            "issuer": "PeopleCert"
+            , "certifications": [
+                {
+                    "name": "ITIL 4 Foundation"
+                    , "expiration_date": "Jan 2027"
+                }
+            ]
+        }
+    ]
+}
