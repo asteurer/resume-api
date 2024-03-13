@@ -6,11 +6,13 @@ services:
     image: asteurer/resume_api_database
     restart: always
     container_name: db
-    # set shared memory limit when using docker-compose
+    # set shared memory limit
     shm_size: 128mb
     volumes:
-      - pgdata:/var/lib/postgresql/data
-      # - ./db/init/:/docker-entrypoint-initdb.d/:ro
+      # This is the path to the EBS volume
+      - type: bind
+        source: /mnt/pgdata/pg_data
+        target: /var/lib/postgresql/data
     environment:
       POSTGRES_DB: ${DATABASE_HOST}
       POSTGRES_USER: ${DATABASE_USER}
