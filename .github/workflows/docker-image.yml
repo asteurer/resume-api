@@ -1,0 +1,32 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u asteurer --password-stdin
+    - name: Build and push the Docker image (app)
+      run: |
+        max_attempts=3
+        for attempt in $(seq 1 $max_attempts); do
+          docker build . --file app.Dockerfile --tag asteurer/resume_api_app:latest && \
+          docker push asteurer/resume_api_app && break
+          echo "Attempt $attempt of $max_attempts failed! Retrying in 10 seconds..."
+          sleep 10
+        done
+    - name: Build and push the Docker image (database)
+      run: |
+        max_attempts=3
+        for attempt in $(seq 1 $max_attempts); do
+          docker build . --file database.Dockerfile --tag asteurer/resume_api_database:latest && \
+          docker push asteurer/resume_api_database && break
+          echo "Attempt $attempt of $max_attempts failed! Retrying in 10 seconds..."
+          sleep 10
+        done
+
