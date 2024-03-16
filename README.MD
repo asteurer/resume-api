@@ -4,7 +4,7 @@
 
 # Usage
 
-- On a host running Linux OS, run the following commands to install Docker and Docker Compose:
+- On a host running Linux Ubuntu, run the following commands to install Docker and Docker Compose:
 
 ```
 sudo yum update -y
