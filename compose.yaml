@@ -9,10 +9,7 @@ services:
     # set shared memory limit
     shm_size: 128mb
     volumes:
-      # This is the path to the EBS volume
-      - type: bind
-        source: /mnt/pgdata/pg_data
-        target: /var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: ${DATABASE_HOST}
       POSTGRES_USER: ${DATABASE_USER}
