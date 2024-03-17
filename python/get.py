@@ -96,7 +96,7 @@ def get_data(connection):
                 for data in temp.values():
                     result["projects"].append({"name": data["name"], 
                                               "codeRepository": data["code_repository"], 
-                                              "projectDescription": ["project_description"]})
+                                              "projectDescription": data["project_description"]})
 
                 # CERTIFICATIONS
                     cursor.execute("""

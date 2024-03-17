@@ -23,9 +23,9 @@
             , "duration": "Jul 2023 - Present"
             , "description": [
                 "Collaborated with Conservice’s executive team to better-understand the business through quantitative and qualitative analysis."
-                , "Programmed dozens of Python applications to help perform larger data analyses."
-                , "Enhanced the productivity of 5 different teams by creating and maintaining ad hoc automated workaround solutions."
-                , "Technologies: Python, Amazon Web Services, JavaScript, Google Apps Script"
+                , "Performed complex analyses on large datasets (over 10 million data points) using Python’s Pandas library while keeping runtimes under 5 minutes."
+                , "Built, maintained, and improved automated processes for 5 different teams saving over 20 hours of manual work a week."
+                , "Technologies: Python, Pandas, Amazon Web Services, Google Apps Script"
             ]
         }
         , {
@@ -41,8 +41,8 @@
         }
     ]
     , "skills": {
-        "technologies": "Amazon Web Services S3, Amazon Web Services Lambda, Amazon Web Services SNS, Amazon Web Services IAM, PostgreSQL, Docker, Terraform"
-        , "languages": "Python, Bash"
+        "technologies": "Linux, Docker, Kubernetes, Terraform, Amazon Web Services EC2, Amazon Web Services SNS, Amazon Web Services IAM, GitHub Actions, Amazon Web Services EKS, Amazon Web Services EKS, Amazon Web Services Route 53, Amazon Web Services SNS, Amazon Web Services IAM"
+        , "languages": "Python, Bash, JavaScript, Java"
     }
 
     , "projects": [
@@ -66,8 +66,10 @@
             "name": "Resume API"
             , "code_repository": "https://github.com/asteurer/resume-api"
             , "description": [
-                "Designed and built a containerized REST API that retrieves resume data from a database and distributes it using JSON."
-                , "Technologies: Python, Docker, PostgreSQL"
+                "Built a containerized REST API that uses Flask to listen for web requests and gets data from and posts data to a PostgreSQL database."
+                , "Created a CI/CD pipeline using GitHub actions to build and push Docker images to DockerHub when code is pushed/merged to the master branch."
+                , "Deployed application into production using Amazon Web Services EKS. Output can be seen here : asteurer.com/api/resume/get"
+                , "Technologies: Python, Flask, Docker, Kubernetes, GitHub Actions, Linux, Amazon Web Services EC2, Amazon Web Services EKS, Amazon Web Services Route53"
             ]
         }
     ]
