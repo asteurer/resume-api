@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app
+        image: asteurer/resume_api_app
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DATABASE_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: db-user 
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: db-password
+        - name: DATABASE_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: db-config
+              key: db-url
+        - name: DATABASE_NAME
+          value: db
+        - name: VALID_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: token
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+spec:
+  type: LoadBalancer # Change this to LoadBalancer
+  selector:
+    app: app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+
