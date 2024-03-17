@@ -4,3 +4,4 @@ __pycache__/*
 *.json
 shell/*
 *.tfvars
+*-secret.yml
