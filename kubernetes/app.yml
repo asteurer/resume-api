@@ -50,7 +50,7 @@ kind: Service
 metadata:
   name: app-service
 spec:
-  type: LoadBalancer # Change this to LoadBalancer
+  type: LoadBalancer
   selector:
     app: app
   ports:
