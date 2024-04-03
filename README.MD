@@ -37,7 +37,7 @@ echo "VALID_TOKEN=${YOUR_VARIABLE_HERE}" >> .env
 - Once the .env file is created, run the below command: 
 
 ```
-sudo docker-compose up -d
+docker-compose up -d
 ```
 
 - The containers are now running. You can access the API via CURL request as shown below:
